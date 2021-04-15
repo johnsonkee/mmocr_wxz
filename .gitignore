@@ -136,3 +136,6 @@ htmlcov
 log.txt
 workspace.code-workspace
 results
+
+work_dir
+log

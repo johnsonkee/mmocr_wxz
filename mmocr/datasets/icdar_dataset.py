@@ -5,6 +5,7 @@ import mmocr.utils as utils
 from mmdet.datasets.builder import DATASETS
 from mmdet.datasets.coco import CocoDataset
 from mmocr.core.evaluation.hmean import eval_hmean
+import pdb
 
 
 @DATASETS.register_module()
@@ -90,6 +91,7 @@ class IcdarDataset(CocoDataset):
                 gt_bboxes.append(bbox)
                 gt_labels.append(self.cat2label[ann['category_id']])
                 gt_masks_ann.append(ann.get('segmentation', None))
+        # pdb.set_trace()
         if gt_bboxes:
             gt_bboxes = np.array(gt_bboxes, dtype=np.float32)
             gt_labels = np.array(gt_labels, dtype=np.int64)
