@@ -70,10 +70,12 @@ test_pipeline = [
     dict(type='LoadImageFromFile'),
     dict(
         type='MultiScaleFlipAug',
-        img_scale=(4068, 1024),
+        #img_scale=(4068, 1024),
+        img_scale=(1280, 736),
         flip=False,
         transforms=[
-            dict(type='Resize', img_scale=(4068, 1024), keep_ratio=True),
+            #dict(type='Resize', img_scale=(4068, 1024), keep_ratio=True),
+            dict(type='Resize', img_scale=(1280, 736), keep_ratio=True),
             dict(type='Normalize', **img_norm_cfg),
             dict(type='Pad', size_divisor=32),
             dict(type='ImageToTensor', keys=['img']),

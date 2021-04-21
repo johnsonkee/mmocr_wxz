@@ -2,7 +2,7 @@ import numpy as np
 
 import mmocr.utils as utils
 from . import utils as eval_utils
-
+import pdb
 
 def eval_hmean_iou(pred_boxes,
                    gt_boxes,
@@ -63,6 +63,7 @@ def eval_hmean_iou(pred_boxes,
             pred, gt_ignored_index, gt_polys, precision_thr)
 
         # match.
+        # pdb.set_trace()
         if gt_num > 0 and pred_num > 0:
             sz = [gt_num, pred_num]
             iou_mat = np.zeros(sz)

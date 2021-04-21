@@ -170,7 +170,9 @@ def poly_union(poly_det, poly_gt):
     area_det = poly_det.area()
     area_gt = poly_gt.area()
     area_inters, _ = poly_intersection(poly_det, poly_gt)
-    return area_det + area_gt - area_inters
+    # return area_det + area_gt - area_inters
+    #TODO: wxz
+    return area_det + area_gt
 
 
 def boundary_iou(src, target):

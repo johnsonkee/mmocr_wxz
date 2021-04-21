@@ -8,6 +8,7 @@ from mmocr.core.evaluation import hmean_ic13, hmean_iou
 from mmocr.core.evaluation.utils import (filter_2dlist_result,
                                          select_top_boundary)
 from mmocr.core.mask import extract_boundary
+import pdb
 
 
 def output_ranklist(img_results, img_infos, out_file):
@@ -126,6 +127,7 @@ def eval_hmean(results,
             thr = iter * 0.1
             top_preds = select_top_boundary(preds, pred_scores, thr)
             if metric == 'hmean-iou':
+                # pdb.set_trace()
                 result, img_result = hmean_iou.eval_hmean_iou(
                     top_preds, gts, gts_ignore)
             elif metric == 'hmean-ic13':
